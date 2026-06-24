@@ -1,0 +1,62 @@
+/* Contenedor principal de la píldora */
+.nav-pill-container {
+  position: relative;
+  display: inline-flex;
+  background-color: #111111; /* Fondo muy oscuro, casi negro */
+  border-radius: 50px;       /* Forma completamente redondeada */
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Un borde sutil para darle volumen */
+}
+
+/* Estilos de cada enlace */
+.nav-item {
+  position: relative;
+  z-index: 2; /* Mantiene el texto por encima del fondo amarillo */
+  padding: 10px 24px;
+  color: #a0a0a0; /* Letras grises por defecto */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-item.indicator-active {
+  color: #111111;
+}
+
+/* El cuadrado redondeado amarillo que se mueve */
+.nav-indicator {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 0;
+  background-color: #00ffea; /* Amarillo vibrante */
+  box-shadow: 0 0 20px #00ffea;
+  border-radius: 40px;
+  z-index: 1; /* Se queda por debajo del texto */
+  /* Esta transición es la magia: hace el movimiento suave */
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+  width: 0; /* Se calcula dinámicamente con JS */
+}
+
+body{
+    background-color: #111111;
+}
+
+
+/* Esto hace que las partículas ocupen toda la pantalla y se vayan al fondo */
+#particles-js {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+/* Y te recomiendo añadir este reseteo básico arriba del todo para 
+   quitar los márgenes blancos feos que traen los navegadores por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
