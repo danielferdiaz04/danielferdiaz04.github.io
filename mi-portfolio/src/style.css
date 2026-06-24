@@ -6,6 +6,7 @@
   border-radius: 50px;       /* Forma completamente redondeada */
   padding: 6px;
   border: 1px solid rgba(255, 255, 255, 0.1); /* Un borde sutil para darle volumen */
+  z-index: 20;
 }
 
 /* Estilos de cada enlace */
@@ -31,7 +32,7 @@
   top: 6px;
   bottom: 6px;
   left: 0;
-  background-color: #00ffea; /* Amarillo vibrante */
+  background-color: #00ffea;
   box-shadow: 0 0 20px #00ffea;
   border-radius: 40px;
   z-index: 1; /* Se queda por debajo del texto */
@@ -59,4 +60,169 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* ========================
+   SECCIÓN INICIO (HERO) - SPLIT LAYOUT
+   ======================== */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  margin-top: -80px; 
+  position: relative;
+  z-index: 10;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  gap: 50px; /* Separación entre el texto y la imagen */
+  width: 100%;
+  max-width: 1200px; /* Evita que se estire demasiado en pantallas gigantes */
+  margin: 0 auto;
+  align-items: center;
+}
+
+.hero-text {
+  text-align: left; /* Todo a la izquierda */
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.text-neon {
+  color: #00ffea;
+  text-shadow: 0 0 15px rgba(0, 255, 234, 0.4);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  color: #a0a0a0;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.hero-desc {
+  color: #cccccc;
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin-bottom: 40px; /* Quitamos el auto para que no se centre */
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: flex-start; /* Botones alineados a la izquierda */
+  gap: 20px;
+}
+
+/* ========================
+   DISEÑO DE LA TERMINAL (LADO DERECHO)
+   ======================== */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.terminal-box {
+  background-color: rgba(17, 17, 17, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+  /*box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 234, 0.1);*/
+  box-shadow:  5px 5px 7px #00ffea;
+  backdrop-filter: blur(10px); /* Desenfoque tipo cristal */
+  overflow: hidden;
+}
+
+.terminal-header {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Los 3 puntitos de Apple */
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.terminal-body {
+  padding: 24px;
+  font-family: 'Courier New', Courier, monospace; /* Fuente de código */
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.text-white { color: #ffffff; }
+.text-gray { color: #a0a0a0; padding-left: 20px; } /* Tabulación para las respuestas */
+
+/* El guión parpadeante */
+.cursor-blink {
+  color: #00ffea;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ========================
+   BOTONES
+   ======================== */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-neon, .btn-outline {
+  display: inline-flex;
+  padding: 12px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Botón principal estilo Neón */
+.btn-neon {
+  background-color: #00ffea;
+  color: #111111;
+  box-shadow: 0 0 15px rgba(0, 255, 234, 0.4);
+}
+
+.btn-neon:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 234, 0.8);
+  transform: translateY(-3px); /* Se levanta un poco al pasar el ratón */
+}
+
+/* Botón secundario transparente */
+.btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
 }
