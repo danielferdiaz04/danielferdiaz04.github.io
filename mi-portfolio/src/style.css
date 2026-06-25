@@ -9,6 +9,23 @@
   z-index: 20;
 }
 
+/* Ajustamos el tamaño del icono y lo volvemos blanco */
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  /* Este filtro invierte los colores: Si tu SVG descargado es negro, lo hace blanco */
+  filter: invert(1); 
+}
+
+.btn-icon-habilities {
+  width: 20px;
+  height: 20px;
+  /* Esta fórmula matemática convierte el color negro en tu cian exacto (#00ffea) */
+  filter: invert(86%) sepia(43%) saturate(3083%) hue-rotate(113deg) brightness(103%) contrast(103%);
+  transition: all 0.3s ease;
+  align-items: center;
+}
+
 /* Estilos de cada enlace */
 .nav-item {
   position: relative;
@@ -225,4 +242,122 @@ body{
   border-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.05);
   transform: translateY(-3px);
+}
+
+/* ========================
+   SECCIÓN HABILIDADES
+   ======================== */
+.skills-section {
+  padding: 100px 5%; /* Espaciado generoso arriba y abajo */
+  position: relative;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #a0a0a0;
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+}
+
+/* La cuadrícula mágica que se adapta sola */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* 1. La tarjeta original (Vuelve a tener su fondo limpio de cristal) */
+.skill-card {
+  position: relative; /* Muy importante para anclar el nuevo borde */
+  background-color: rgba(17, 17, 17, 0.6);
+  border-radius: 10px;
+  padding: 30px;
+  text-align: left;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: none; /* Quitamos el borde tradicional */
+}
+
+/* 2. EL BORDE MÁGICO: Solo afecta a la línea exterior */
+.skill-card::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Ocupa exactamente el tamaño de la tarjeta */
+  border-radius: 10px; 
+  padding: 1px; /* Este es el grosor de tu borde */
+  
+  /* Aquí defines tu degradado: Azul en el centro, oscuro a los lados */
+  background: linear-gradient(to right, rgba(0, 255, 234, 0.05), #00ffea, rgba(0, 255, 234, 0.05));
+  
+  /* La máscara recorta el centro de este elemento, dejando visible SOLO el padding de 1px */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  
+  pointer-events: none; /* Para que no bloquee si haces clic */
+  transition: all 0.3s ease;
+}
+
+/* 3. Comportamiento al pasar el ratón */
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 234, 0.1);
+}
+
+.skill-card:hover::before {
+  /* Se ilumina un poco más a los lados al pasar el ratón */
+  background: linear-gradient(to right, rgba(0, 255, 234, 0.2), #00ffea, rgba(0, 255, 234, 0.2));
+}
+
+.card-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+/* El contenedor de las "píldoras" */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap; /* Si no caben, bajan a la siguiente línea */
+  gap: 12px;
+}
+
+/* Diseño de cada habilidad individual */
+.tag {
+  background-color: rgba(0, 255, 234, 0.05);
+  color: #00ffea;
+  border: 1px solid rgba(0, 255, 234, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: default;
+  gap: 20px;
+}
+
+.tag:hover{
+  background-color: #00ffea;
+  color: #111111; /* Letra oscura al iluminarse el fondo */
+  box-shadow: 0 0 25px #00ffea;
+}
+
+/* 2. Estado Hover: Cuando el ratón toca la etiqueta (.tag), oscurecemos el icono */
+.tag:hover .btn-icon-habilities {
+  /* Le quitamos todo el brillo para que se vuelva casi negro (#111111) y destaque sobre el fondo cian */
+  filter: brightness(0.1);
 }
