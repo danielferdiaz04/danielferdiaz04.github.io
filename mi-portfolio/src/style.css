@@ -2,10 +2,13 @@
 .nav-pill-container {
   position: relative;
   display: inline-flex;
-  background-color: #111111; /* Fondo muy oscuro, casi negro */
-  border-radius: 50px;       /* Forma completamente redondeada */
+  background-color: #111111;
+  /* Fondo muy oscuro, casi negro */
+  border-radius: 50px;
+  /* Forma completamente redondeada */
   padding: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Un borde sutil para darle volumen */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Un borde sutil para darle volumen */
   z-index: 20;
 }
 
@@ -14,13 +17,14 @@
   width: 20px;
   height: 20px;
   /* Este filtro invierte los colores: Si tu SVG descargado es negro, lo hace blanco */
-  filter: invert(1); 
+  filter: invert(1);
+  transition: filter 0.3s ease;
 }
 
 .btn-icon-habilities {
   width: 20px;
   height: 20px;
-  /* Esta fórmula matemática convierte el color negro en tu cian exacto (#00ffea) */
+  /* Esta fórmula matemática convierte el color negro en tu cian exacto (#00cab9) */
   filter: invert(86%) sepia(43%) saturate(3083%) hue-rotate(113deg) brightness(103%) contrast(103%);
   transition: all 0.3s ease;
   align-items: center;
@@ -29,9 +33,11 @@
 /* Estilos de cada enlace */
 .nav-item {
   position: relative;
-  z-index: 2; /* Mantiene el texto por encima del fondo amarillo */
-  padding: 10px 24px;
-  color: #a0a0a0; /* Letras grises por defecto */
+  z-index: 2;
+  /* Mantiene el texto por encima del fondo amarillo */
+  padding: 8px 24px;
+  color: #a0a0a0;
+  /* Letras grises por defecto */
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -49,17 +55,19 @@
   top: 6px;
   bottom: 6px;
   left: 0;
-  background-color: #00ffea;
-  box-shadow: 0 0 20px #00ffea;
+  background-color: #00cab9;
+  box-shadow: 0 0 20px #00cab9;
   border-radius: 40px;
-  z-index: 1; /* Se queda por debajo del texto */
+  z-index: 1;
+  /* Se queda por debajo del texto */
   /* Esta transición es la magia: hace el movimiento suave */
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
-  width: 0; /* Se calcula dinámicamente con JS */
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 0;
+  /* Se calcula dinámicamente con JS */
 }
 
-body{
-    background-color: #111111;
+body {
+  background-color: #111111;
 }
 
 
@@ -87,23 +95,27 @@ body{
   display: flex;
   align-items: center;
   padding: 0 5%;
-  margin-top: -80px; 
+  margin-top: -80px;
   position: relative;
   z-index: 10;
 }
 
 .hero-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-  gap: 50px; /* Separación entre el texto y la imagen */
+  grid-template-columns: 1fr 1fr;
+  /* Dos columnas iguales */
+  gap: 50px;
+  /* Separación entre el texto y la imagen */
   width: 100%;
-  max-width: 1200px; /* Evita que se estire demasiado en pantallas gigantes */
+  max-width: 1200px;
+  /* Evita que se estire demasiado en pantallas gigantes */
   margin: 0 auto;
   align-items: center;
 }
 
 .hero-text {
-  text-align: left; /* Todo a la izquierda */
+  text-align: left;
+  /* Todo a la izquierda */
 }
 
 .hero-title {
@@ -115,7 +127,7 @@ body{
 }
 
 .text-neon {
-  color: #00ffea;
+  color: #00cab9;
   text-shadow: 0 0 15px rgba(0, 255, 234, 0.4);
 }
 
@@ -130,13 +142,15 @@ body{
   color: #cccccc;
   font-size: 1.1rem;
   max-width: 500px;
-  margin-bottom: 40px; /* Quitamos el auto para que no se centre */
+  margin-bottom: 40px;
+  /* Quitamos el auto para que no se centre */
   line-height: 1.6;
 }
 
 .hero-actions {
   display: flex;
-  justify-content: flex-start; /* Botones alineados a la izquierda */
+  justify-content: flex-start;
+  /* Botones alineados a la izquierda */
   gap: 20px;
 }
 
@@ -155,8 +169,9 @@ body{
   width: 100%;
   max-width: 450px;
   /*box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 234, 0.1);*/
-  box-shadow:  5px 5px 7px #00ffea;
-  backdrop-filter: blur(10px); /* Desenfoque tipo cristal */
+  box-shadow: 5px 5px 7px #00cab9;
+  backdrop-filter: blur(10px);
+  /* Desenfoque tipo cristal */
   overflow: hidden;
 }
 
@@ -174,28 +189,48 @@ body{
   height: 12px;
   border-radius: 50%;
 }
-.dot.red { background-color: #ff5f56; }
-.dot.yellow { background-color: #ffbd2e; }
-.dot.green { background-color: #27c93f; }
+
+.dot.red {
+  background-color: #ff5f56;
+}
+
+.dot.yellow {
+  background-color: #ffbd2e;
+}
+
+.dot.green {
+  background-color: #27c93f;
+}
 
 .terminal-body {
   padding: 24px;
-  font-family: 'Courier New', Courier, monospace; /* Fuente de código */
+  font-family: 'Courier New', Courier, monospace;
+  /* Fuente de código */
   font-size: 0.95rem;
   text-align: left;
 }
 
-.text-white { color: #ffffff; }
-.text-gray { color: #a0a0a0; padding-left: 20px; } /* Tabulación para las respuestas */
+.text-white {
+  color: #ffffff;
+}
+
+.text-gray {
+  color: #a0a0a0;
+  padding-left: 20px;
+}
+
+/* Tabulación para las respuestas */
 
 /* El guión parpadeante */
 .cursor-blink {
-  color: #00ffea;
+  color: #00cab9;
   animation: blink 1s step-start infinite;
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* ========================
@@ -207,7 +242,8 @@ body{
   gap: 20px;
 }
 
-.btn-neon, .btn-outline {
+.btn-neon,
+.btn-outline {
   display: inline-flex;
   padding: 12px 32px;
   border-radius: 30px;
@@ -221,14 +257,15 @@ body{
 
 /* Botón principal estilo Neón */
 .btn-neon {
-  background-color: #00ffea;
+  background-color: #00cab9;
   color: #111111;
   box-shadow: 0 0 15px rgba(0, 255, 234, 0.4);
 }
 
 .btn-neon:hover {
   box-shadow: 0 0 25px rgba(0, 255, 234, 0.8);
-  transform: translateY(-3px); /* Se levanta un poco al pasar el ratón */
+  transform: translateY(-3px);
+  /* Se levanta un poco al pasar el ratón */
 }
 
 /* Botón secundario transparente */
@@ -241,6 +278,9 @@ body{
 .btn-outline:hover {
   border-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.05);
+}
+
+.btn-outline:not(.list-btn):hover {
   transform: translateY(-3px);
 }
 
@@ -248,7 +288,8 @@ body{
    SECCIÓN HABILIDADES
    ======================== */
 .skills-section {
-  padding: 100px 5%; /* Espaciado generoso arriba y abajo */
+  padding: 100px 5%;
+  /* Espaciado generoso arriba y abajo */
   position: relative;
   z-index: 10;
 }
@@ -280,33 +321,38 @@ body{
 
 /* 1. La tarjeta original (Vuelve a tener su fondo limpio de cristal) */
 .skill-card {
-  position: relative; /* Muy importante para anclar el nuevo borde */
+  position: relative;
+  /* Muy importante para anclar el nuevo borde */
   background-color: rgba(17, 17, 17, 0.6);
   border-radius: 10px;
   padding: 30px;
   text-align: left;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
-  border: none; /* Quitamos el borde tradicional */
+  border: none;
+  /* Quitamos el borde tradicional */
 }
 
 /* 2. EL BORDE MÁGICO: Solo afecta a la línea exterior */
 .skill-card::before {
   content: "";
   position: absolute;
-  inset: 0; /* Ocupa exactamente el tamaño de la tarjeta */
-  border-radius: 10px; 
-  padding: 1px; /* Este es el grosor de tu borde */
-  
+  inset: 0;
+  /* Ocupa exactamente el tamaño de la tarjeta */
+  border-radius: 10px;
+  padding: 1px;
+  /* Este es el grosor de tu borde */
+
   /* Aquí defines tu degradado: Azul en el centro, oscuro a los lados */
-  background: linear-gradient(to right, rgba(0, 255, 234, 0.05), #00ffea, rgba(0, 255, 234, 0.05));
-  
+  background: linear-gradient(to right, rgba(0, 255, 234, 0.05), #00cab9, rgba(0, 255, 234, 0.05));
+
   /* La máscara recorta el centro de este elemento, dejando visible SOLO el padding de 1px */
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  
-  pointer-events: none; /* Para que no bloquee si haces clic */
+
+  pointer-events: none;
+  /* Para que no bloquee si haces clic */
   transition: all 0.3s ease;
 }
 
@@ -318,7 +364,7 @@ body{
 
 .skill-card:hover::before {
   /* Se ilumina un poco más a los lados al pasar el ratón */
-  background: linear-gradient(to right, rgba(0, 255, 234, 0.2), #00ffea, rgba(0, 255, 234, 0.2));
+  background: linear-gradient(to right, rgba(0, 255, 234, 0.2), #00cab9, rgba(0, 255, 234, 0.2));
 }
 
 .card-title {
@@ -332,14 +378,15 @@ body{
 /* El contenedor de las "píldoras" */
 .skill-tags {
   display: flex;
-  flex-wrap: wrap; /* Si no caben, bajan a la siguiente línea */
+  flex-wrap: wrap;
+  /* Si no caben, bajan a la siguiente línea */
   gap: 12px;
 }
 
 /* Diseño de cada habilidad individual */
 .tag {
   background-color: rgba(0, 255, 234, 0.05);
-  color: #00ffea;
+  color: #00cab9;
   border: 1px solid rgba(0, 255, 234, 0.2);
   padding: 8px 16px;
   border-radius: 20px;
@@ -350,14 +397,286 @@ body{
   gap: 20px;
 }
 
-.tag:hover{
-  background-color: #00ffea;
-  color: #111111; /* Letra oscura al iluminarse el fondo */
-  box-shadow: 0 0 25px #00ffea;
+.tag:hover {
+  background-color: #00cab9;
+  color: #111111;
+  /* Letra oscura al iluminarse el fondo */
+  box-shadow: 0 0 25px #00cab9;
 }
 
 /* 2. Estado Hover: Cuando el ratón toca la etiqueta (.tag), oscurecemos el icono */
 .tag:hover .btn-icon-habilities {
   /* Le quitamos todo el brillo para que se vuelva casi negro (#111111) y destaque sobre el fondo cian */
   filter: brightness(0.1);
+}
+
+/* ========================
+   PROYECTOS INTERACTIVOS
+   ======================== */
+.interactive-projects {
+  padding: 100px 5%;
+}
+
+.project-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Divide la pantalla 50/50 */
+  gap: 60px;
+  align-items: center;
+}
+
+/* --- Lado de la Imagen --- */
+.project-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  /* Mantiene la proporción de la caja */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+/* Efecto de zoom suave al pasar el ratón por la imagen */
+.project-image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+/* --- Lado de la Lista --- */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 2px solid #fff;
+  /* Línea gruesa principal */
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.project-count {
+  font-size: 1.2rem;
+  color: #00cab9;
+  font-family: monospace;
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* Línea fina de separación */
+  transition: all 0.3s ease;
+}
+
+/* El texto del proyecto */
+.project-title {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.project-item:hover .project-title,
+.project-item.active .project-title {
+  color: #00cab9;
+  /* Se ilumina en cian */
+  transform: translateX(10px);
+  /* Se mueve un poquito a la derecha */
+}
+
+/* --- Contenedor de botones deslizantes --- */
+.project-actions {
+  display: flex;
+  gap: 12px;
+  opacity: 0;
+  /* Totalmente invisibles por defecto */
+  transform: translateX(30px);
+  /* Empezamos 30px empujados hacia la derecha */
+
+  /* Curva de animación premium (hace un micro-rebote al final) */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Súper importante: evita que el usuario pueda hacer clic en botones invisibles */
+  pointer-events: none;
+}
+
+/* El Hover: Aparecen los botones */
+.project-item:hover .project-actions,
+.project-item.active .project-actions {
+  opacity: 1;
+  transform: translateX(0);
+  /* Vuelven a su posición original */
+  pointer-events: auto;
+  /* Reactivamos los clics */
+}
+
+
+/* --- Estilos base para el botón sólido --- */
+.btn-solid {
+  background-color: #00cab9;
+  color: #111111;
+  border: 1px solid #00cab9;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-solid:hover {
+  background-color: transparent;
+  color: #00cab9;
+  box-shadow: 0 0 10px rgba(0, 255, 234, 0.4);
+}
+
+
+
+/* El botón Outline (para GitHub) por si no lo tenías ajustado */
+.btn-outline {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: #00cab9;
+  color: #00cab9;
+}
+
+/* Ajuste de tamaño específico para los botones de la lista */
+.list-btn {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  /* Bordes un pelín más rectos para que quepan mejor */
+}
+
+/* Reducimos el tamaño del icono de GitHub si decides ponerlo aquí dentro */
+.list-btn .btn-icon-habilities {
+  width: 14px;
+  height: 14px;
+}
+
+/* Al pasar el ratón por el botón Outline, teñimos el icono del cian exacto */
+.btn-outline:hover .btn-icon {
+  /* Esta combinación matemática transforma un icono blanco/negro en tu color #00cab9 */
+  filter: invert(86%) sepia(43%) saturate(3083%) hue-rotate(113deg) brightness(103%) contrast(103%);
+}
+
+/* Responsive: En móviles se pone uno encima del otro */
+@media (max-width: 900px) {
+  .project-layout {
+    grid-template-columns: 1fr;
+    /* Pasa de 2 columnas a 1 sola columna */
+  }
+}
+
+/* ========================
+   SECCIÓN RULETA DE LOGOS
+   ======================== */
+.brands-section {
+  padding: 60px 5%;
+  /* Un fondo ultra sutil para separar secciones */
+  background: linear-gradient(90deg, rgba(17,17,17,0) 0%, rgba(0, 255, 234, 0.02) 50%, rgba(17,17,17,0) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin: 60px 0; /* Separación con las secciones de arriba y abajo */
+}
+
+.brands-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* --- El Texto --- */
+.brands-text p {
+  color: #a0a0a0;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-top: 15px;
+}
+
+/* --- Contenedor de la Ruleta --- */
+.roulette-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  /* El efecto de difuminado en los bordes (niebla) */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+/* --- La pista que se mueve --- */
+.roulette-track {
+  display: flex;
+  width: max-content;
+}
+
+/* --- La animación infinita --- */
+.logos-slide {
+  display: flex;
+  gap: 60px; /* Separación entre logos */
+  padding: 0 30px;
+  animation: scroll-roulette 15s linear infinite;
+}
+
+/* Al pasar el ratón por la ruleta, se pausa para poder verlos bien */
+.roulette-wrapper:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+/* --- Estilo de los Logos --- */
+.brand-logo {
+  height: 100px;
+  width: auto;
+  /* Por defecto los ponemos en gris y un poco transparentes */
+  
+  transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+  filter: grayscale(0%) opacity(1) drop-shadow(0 0 10px rgba(0, 255, 234, 0.5));
+}
+
+@keyframes scroll-roulette {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* --- Responsive para móviles --- */
+@media (max-width: 900px) {
+  .brands-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  /* Obligamos al texto a ir arriba en el móvil, y la ruleta debajo */
+  .brands-text {
+    order: -1; 
+  }
 }

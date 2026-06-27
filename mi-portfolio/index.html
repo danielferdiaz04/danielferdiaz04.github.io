@@ -177,6 +177,120 @@
     </div>
   </section>
 
+  <section class="brands-section">
+  <div class="container brands-layout">
+    
+    <div class="roulette-wrapper">
+      <div class="roulette-track">
+        
+        <div class="logos-slide">
+          <img src="/src/assets/bonsaido.png" alt="ROS2" class="brand-logo">
+          <img src="/src/assets/bonsaido.png" alt="Python" class="brand-logo">
+          <img src="/src/assets/bonsaido.png" alt="Docker" class="brand-logo">
+          <img src="/src/assets/bonsaido.png" alt="Django" class="brand-logo">
+        </div>
+
+        <div class="logos-slide">
+          <img src="/src/assets/bonsaido.png" alt="ROS2" class="brand-logo">
+          <img src="/src/assets/bonsaido.png" alt="Python" class="brand-logo">
+          <img src="/src/assets/bonsaido.png" alt="Docker" class="brand-logo">
+          <img src="/src/assets/bonsaido.png" alt="Django" class="brand-logo">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="brands-text">
+      <h2 class="section-title">Evolución y <span class="text-neon">Ecosistema</span></h2>
+      <p>
+        A lo largo de mi trayectoria he colaborado en la creación de herramientas 
+        y sistemas robustos. Cada una de estas tecnologías representa un reto superado 
+        y una solución de alto rendimiento.A lo largo de mi trayectoria he colaborado en la creación de herramientas 
+        y sistemas robustos. Cada una de estas tecnologías representa un reto superado 
+        y una solución de alto rendimiento.A lo largo de mi trayectoria he colaborado en la creación de herramientas 
+        y sistemas robustos. Cada una de estas tecnologías representa un reto superado 
+        y una solución de alto rendimiento.A lo largo de mi trayectoria he colaborado en la creación de herramientas 
+        y sistemas robustos. Cada una de estas tecnologías representa un reto superado 
+        y una solución de alto rendimiento.A lo largo de mi trayectoria he colaborado en la creación de herramientas 
+        y sistemas robustos. Cada una de estas tecnologías representa un reto superado 
+        y una solución de alto rendimiento.A lo largo de mi trayectoria he colaborado en la creación de herramientas 
+        y sistemas robustos. Cada una de estas tecnologías representa un reto superado 
+        y una solución de alto rendimiento.A lo largo de mi trayectoria he colaborado en la creación de herramientas 
+        y sistemas robustos. Cada una de estas tecnologías representa un reto superado 
+        y una solución de alto rendimiento.A lo largo de mi trayectoria he colaborado en la creación de herramientas 
+        y sistemas robustos. Cada una de estas tecnologías representa un reto superado 
+        y una solución de alto rendimiento.A lo largo de mi trayectoria he colaborado en la creación de herramientas 
+        y sistemas robustos. Cada una de estas tecnologías representa un reto superado 
+        y una solución de alto rendimiento.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+  <!-- SECCIÓN PROYECTOS: INTERACTIVE HOVER -->
+  <section id="proyectos" class="interactive-projects">
+    <div class="container project-layout">
+
+      <!-- COLUMNA IZQUIERDA: La Imagen Dinámica -->
+      <div class="project-image-wrapper tilt">
+        <!-- Este enlace e imagen cambiarán solos con JS -->
+        <a href="https://github.com/tu-usuario/proyecto-ros2" id="main-project-link" target="_blank">
+          <img src="/src/assets/proyecto1.png" id="main-project-img" alt="Vista previa del proyecto">
+        </a>
+      </div>
+
+      <!-- COLUMNA DERECHA: La Lista de Proyectos -->
+      <div class="project-list-wrapper">
+
+        <div class="project-header">
+          <h2 class="section-title">Mis <span class="text-neon">PROYECTOS</span></h2>
+        </div>
+
+        <ul class="project-list">
+
+          <!-- PROYECTO 1 -->
+          <li class="project-item active" data-image="/src/assets/proyecto1.png"
+            data-link="https://github.com/tu-usuario/proyecto-ros2">
+
+            <!-- El título -->
+            <span class="project-title">Sistema VOT con ROS2</span>
+
+            <!-- NUEVO: Contenedor de botones -->
+            <div class="project-actions">
+              <a href="https://github.com/tu-usuario/proyecto-ros2" target="_blank" class="btn-outline list-btn">
+                <img src="/src/assets/github.svg" alt="Logo GitHub" class="btn-icon">
+                GitHub
+              </a>
+              <a href="#detalles-ros2" class="btn-solid list-btn">
+                Detalles
+              </a>
+            </div>
+          </li>
+
+          <!-- PROYECTO 2 -->
+          <li class="project-item" data-image="/src/assets/proyecto2.png"
+            data-link="https://github.com/tu-usuario/proyecto-django">
+
+            <span class="project-title">API REST E-Commerce</span>
+
+            <div class="project-actions">
+              <a href="https://github.com/tu-usuario/proyecto-django" target="_blank" class="btn-outline list-btn">
+                <img src="/src/assets/github.svg" alt="Logo GitHub" class="btn-icon">
+                GitHub
+              </a>
+              <a href="#detalles-django" class="btn-solid list-btn">
+                Detalles
+              </a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
 
   <script src="./src/particles.min.js"></script>
   <script src="/app.js"></script>
@@ -184,6 +298,14 @@
 
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
+
+  <script type="text/javascript" src="/src/vanilla-tilt.js"></script>
+  <script type="text/javascript">
+	VanillaTilt.init(document.querySelector(".tilt"), {
+		max: 8,
+		speed: 4000
+	});
+</script>
 </body>
 
 </html>

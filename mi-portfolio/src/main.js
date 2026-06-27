@@ -52,3 +52,34 @@ document.addEventListener('DOMContentLoaded', () => {
     moveIndicator(activeItem);
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const projectItems = document.querySelectorAll('.project-item');
+  const mainImg = document.getElementById('main-project-img');
+  const mainLink = document.getElementById('main-project-link');
+
+  projectItems.forEach(item => {
+    // Cuando el cursor entra en el elemento de la lista
+    item.addEventListener('mouseenter', () => {
+      // 1. Quitamos la clase 'active' de todos y se la ponemos al actual
+      projectItems.forEach(p => p.classList.remove('active'));
+      item.classList.add('active');
+
+      // 2. Extraemos la info oculta en los data-attributes
+      const newImgSrc = item.getAttribute('data-image');
+      const newLinkUrl = item.getAttribute('data-link');
+
+      // 3. Hacemos un efecto de "fundido"
+      mainImg.style.opacity = 0; // Ocultamos la imagen actual
+      
+      setTimeout(() => {
+        // Cambiamos la fuente y el enlace en mitad del fundido
+        mainImg.src = newImgSrc;
+        mainLink.href = newLinkUrl;
+        
+        // Volvemos a mostrar la nueva imagen
+        mainImg.style.opacity = 1;
+      }, 200); // 200 milisegundos de transición
+    });
+  });
+});
