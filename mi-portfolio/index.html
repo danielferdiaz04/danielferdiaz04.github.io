@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="hero-visual">
+      <div class="hero-visual tilt">
         <div class="terminal-box">
           <div class="terminal-header">
             <span class="dot red"></span>
@@ -233,7 +233,7 @@
     <div class="container project-layout">
 
       <!-- COLUMNA IZQUIERDA: La Imagen Dinámica -->
-      <div class="project-image-wrapper tilt">
+      <div class="project-image-wrapper tilt2">
         <!-- Este enlace e imagen cambiarán solos con JS -->
         <a href="https://github.com/tu-usuario/proyecto-ros2" id="main-project-link" target="_blank">
           <img src="/src/assets/proyecto1.png" id="main-project-img" alt="Vista previa del proyecto">
@@ -290,6 +290,50 @@
 
     </div>
   </section>
+  <section id="sobre-mi" class="about-section">
+  <div class="container about-layout">
+    
+    <div class="about-visual">
+      <div class="tech-frame">
+        <img src="/src/assets/logo.jpg" alt="Daniel Fernández" class="about-img">
+      </div>
+    </div>
+
+    <div class="about-content">
+      <h2 class="section-title">Sobre <span class="text-neon">Mí</span></h2>
+      <p class="about-bio">
+        Soy un Software Engineer apasionado por resolver problemas complejos a través de código eficiente y escalable. 
+        Mi experiencia abarca desde la construcción de arquitecturas Backend robustas hasta la implementación de 
+        sistemas de Visión Artificial e Inteligencia Artificial en entornos de robótica.
+      </p>
+      
+      <div class="about-highlights">
+        <div class="highlight-box skill-card">
+          <span class="highlight-number">03+</span>
+          <span class="highlight-text">Años de<br>Experiencia</span>
+        </div>
+        <div class="highlight-box skill-card">
+          <span class="highlight-number">15+</span>
+          <span class="highlight-text">Proyectos<br>Completados</span>
+        </div>
+        <div class="highlight-box skill-card">
+          <span class="highlight-number">100%</span>
+          <span class="highlight-text">Enfoque en<br>Clean Code</span>
+        </div>
+      </div>
+
+      <div class="about-actions">
+        <a href="/src/assets/Daniel_Fernandez_CV.pdf" target="_blank" class="btn-solid">
+          Descargar CV
+        </a>
+        <a href="#contacto" class="btn-outline">
+          Contáctame
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
   <script src="./src/particles.min.js"></script>
@@ -302,7 +346,13 @@
   <script type="text/javascript" src="/src/vanilla-tilt.js"></script>
   <script type="text/javascript">
 	VanillaTilt.init(document.querySelector(".tilt"), {
-		max: 8,
+		max: 13,
+		speed: 4000
+	});
+</script>
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelector(".tilt2"), {
+		max: 13,
 		speed: 4000
 	});
 </script>
