@@ -83,3 +83,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// --- FUNCIONALIDAD: COPIAR EMAIL AL PORTAPAPELES ---
+document.addEventListener("DOMContentLoaded", () => {
+  const emailLink = document.getElementById('copy-email');
+
+  if (emailLink) {
+    emailLink.addEventListener('click', (e) => {
+      e.preventDefault(); // Evitamos que la página salte hacia arriba al hacer clic
+      
+      // Cogemos el correo que has puesto en el HTML
+      const email = emailLink.getAttribute('data-email');
+      
+      // La API moderna del navegador para copiar al portapapeles
+      navigator.clipboard.writeText(email).then(() => {
+        // Guardamos el texto original
+        const originalText = emailLink.innerText;
+        
+        // Cambiamos el texto y el color para dar feedback al usuario
+        emailLink.innerText = '¡Copiado al portapapeles!';
+        emailLink.style.color = '#00cab9';
+        
+        // A los 2 segundos, lo devolvemos a la normalidad
+        setTimeout(() => {
+          emailLink.innerText = originalText;
+          emailLink.style.color = ''; // Quita el color forzado y vuelve al del CSS
+        }, 2000);
+      }).catch(err => {
+        console.error('Error al copiar el email: ', err);
+      });
+    });
+  }
+});

@@ -807,3 +807,142 @@ body {
   transform: scale(1.03); /* La misma ampliación de tus proyectos */
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 234, 0.15);
 }
+
+/* ========================
+   SECCIÓN CONTACTO
+   ======================== */
+.contact-section {
+  padding: 100px 5%;
+  margin-bottom: 50px; /* Espacio extra al final de la página */
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  text-align: left; /* <-- ESTO ARREGLA EL CENTRADO DE TODA LA SECCIÓN */
+}
+
+/* --- Lado Izquierdo: Textos y Datos --- */
+.contact-desc {
+  color: #a0a0a0;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.method-item {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  border-left: 2px solid #00cab9; /* Línea cian decorativa */
+}
+
+.method-text span {
+  display: block;
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  font-family: monospace;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.method-text a,
+.method-text p {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.method-text a:hover {
+  color: #00cab9;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* --- Lado Derecho: Formulario Glassmorphism --- */
+.contact-form-wrapper {
+  background-color: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.input-group {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  color: #a0a0a0;
+  font-size: 0.95rem;
+  font-family: inherit; /* <-- Usa tu fuente normal limpia */
+  text-align: left; /* <-- Asegura que se pega al principio de la caja */
+  padding-left: 2px; /* Un pequeño margen sutil para alinear con la caja */
+}
+
+/* Diseño de los campos de texto */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo súper oscuro */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none; /* Quitamos el borde azul feo por defecto del navegador */
+}
+
+.contact-form textarea {
+  resize: vertical; /* Permite estirarlo solo hacia abajo */
+  min-height: 120px;
+}
+
+/* El efecto al hacer clic para escribir */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00cab9;
+  background-color: rgba(0, 202, 185, 0.05);
+  box-shadow: 0 0 15px rgba(0, 202, 185, 0.1);
+}
+
+/* Modificador para que tu botón sólido ocupe todo el ancho del formulario */
+.submit-btn {
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 10px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr; /* En móviles pasa a 1 columna */
+    gap: 50px;
+  }
+  
+  .contact-form-wrapper {
+    padding: 30px 20px;
+  }
+}
