@@ -1,6 +1,9 @@
 /* Contenedor principal de la píldora */
 .nav-pill-container {
-  position: relative;
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   display: inline-flex;
   background-color: #111111;
   /* Fondo muy oscuro, casi negro */
@@ -236,11 +239,6 @@ body {
 /* ========================
    BOTONES
    ======================== */
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
 
 .btn-neon,
 .btn-outline {
@@ -588,14 +586,6 @@ body {
   filter: invert(86%) sepia(43%) saturate(3083%) hue-rotate(113deg) brightness(103%) contrast(103%);
 }
 
-/* Responsive: En móviles se pone uno encima del otro */
-@media (max-width: 900px) {
-  .project-layout {
-    grid-template-columns: 1fr;
-    /* Pasa de 2 columnas a 1 sola columna */
-  }
-}
-
 /* ========================
    SECCIÓN RULETA DE LOGOS
    ======================== */
@@ -677,18 +667,6 @@ body {
   }
 }
 
-/* --- Responsive para móviles --- */
-@media (max-width: 900px) {
-  .brands-layout {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  /* Obligamos al texto a ir arriba en el móvil, y la ruleta debajo */
-  .brands-text {
-    order: -1;
-  }
-}
 
 /* ========================
    SECCIÓN SOBRE MÍ
@@ -702,12 +680,6 @@ body {
   grid-template-columns: 4fr 5fr; /* La foto ocupa un poco menos que el texto */
   gap: 80px;
   align-items: center;
-}
-
-/* --- La Foto y su Marco --- */
-.about-visual {
-  position: relative;
-  padding: 20px;
 }
 
 /* --- El Texto --- */
@@ -762,34 +734,6 @@ body {
 .about-actions {
   display: flex;
   gap: 20px;
-}
-
-/* --- Responsive --- */
-@media (max-width: 900px) {
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 50px;
-    text-align: center;
-  }
-  
-  .about-visual {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .about-highlights {
-    flex-direction: column; /* En móvil las cajitas se apilan */
-  }
-
-  .about-actions {
-    justify-content: center;
-  }
-}
-
-/* --- La Foto --- */
-.about-visual {
-  position: relative;
-  /* Ya no necesitamos el padding extra del marco anterior */
 }
 
 .about-img {
@@ -935,6 +879,40 @@ body {
   margin-top: 10px;
 }
 
+/* ========================
+   ANIMACIONES ON SCROLL
+   ======================== */
+
+/* Estado inicial: Oculto a la izquierda */
+.hidden-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  /* Usamos la misma curva premium de tus botones para mantener consistencia */
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Estado inicial: Oculto a la derecha */
+.hidden-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Estado final: Visible y en su sitio original */
+.show-section {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Opcional: Si quieres que los contenedores no desborden la pantalla en móviles durante la animación */
+html, body {
+  overflow-x: hidden;
+}
+
+/* ========================
+   RESPONSIVE
+   ======================== */
+
 /* --- Responsive --- */
 @media (max-width: 900px) {
   .contact-layout {
@@ -944,5 +922,40 @@ body {
   
   .contact-form-wrapper {
     padding: 30px 20px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+  
+  .about-visual {
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .about-highlights {
+    flex-direction: column; /* En móvil las cajitas se apilan */
+  }
+
+  .about-actions {
+    justify-content: center;
+  }
+
+  .brands-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* Obligamos al texto a ir arriba en el móvil, y la ruleta debajo */
+  .brands-text {
+    order: -1;
+  }
+
+  .project-layout {
+    grid-template-columns: 1fr;
+    /* Pasa de 2 columnas a 1 sola columna */
   }
 }

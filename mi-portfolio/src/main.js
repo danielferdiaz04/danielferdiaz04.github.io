@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './style.css'
 
+
 document.addEventListener('DOMContentLoaded', () => {
   const indicator = document.getElementById('nav-indicator');
   const items = document.querySelectorAll('.nav-item');
@@ -115,3 +116,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// --- FUNCIONALIDAD: REVEAL ON SCROLL ---
+// 1. Configuramos el vigilante (Observer)
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15 // Se activa cuando el 15% de la sección es visible en pantalla
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    // Si la sección entra en la pantalla...
+    if (entry.isIntersecting) {
+      // Le añadimos la clase que la hace visible
+      entry.target.classList.add('show-section');
+      
+      // Dejamos de observarla para que la animación solo ocurra una vez (queda más profesional)
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// 2. Buscamos todas las secciones ocultas y les ponemos el vigilante
+const hiddenElements = document.querySelectorAll('.hidden-left, .hidden-right');
+hiddenElements.forEach((el) => observer.observe(el));
