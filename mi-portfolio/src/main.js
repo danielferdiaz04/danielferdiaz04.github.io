@@ -141,3 +141,107 @@ const observer = new IntersectionObserver((entries, observer) => {
 // 2. Buscamos todas las secciones ocultas y les ponemos el vigilante
 const hiddenElements = document.querySelectorAll('.hidden-left, .hidden-right');
 hiddenElements.forEach((el) => observer.observe(el));
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Capturamos todos los elementos de tu HTML
+  const navMenu = document.getElementById('nav-menu');
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const indicator = document.getElementById('nav-indicator');
+  const navItems = document.querySelectorAll('.nav-item');
+
+  // --- 1. FUNCIÓN MAESTRA QUE MUEVE EL INDICADOR CIAN ---
+  function moveIndicator(element, instant = false) {
+    if (!element || !indicator) return;
+    
+    // En móviles, el indicador está oculto por CSS, no calculamos nada
+    if (window.innerWidth <= 768) return;
+
+    // Limpiamos cualquier "transform" residual que pudiera estar causando el desvío
+    indicator.style.transform = 'none';
+
+    if (instant) {
+      // Movimiento instantáneo (para cuando redimensionas la pantalla, evita bugs)
+      indicator.style.transition = 'none';
+      indicator.style.width = `${element.offsetWidth}px`;
+      indicator.style.left = `${element.offsetLeft}px`;
+      
+      // Forzamos al navegador a aplicar el cambio de golpe
+      void indicator.offsetWidth; 
+      
+      // Restauramos la animación suave de tu CSS original
+      indicator.style.transition = 'all 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+    } else {
+      // Movimiento suave normal (para cuando pasas el ratón)
+      indicator.style.width = `${element.offsetWidth}px`;
+      indicator.style.left = `${element.offsetLeft}px`;
+    }
+  }
+
+  // --- 2. INICIALIZAR ---
+  // Al cargar la página, ponemos el cian en el botón activo
+  const activeItem = document.querySelector('.nav-item.active');
+  moveIndicator(activeItem, true);
+
+  // --- 3. EVENTOS DE RATÓN (HOVER Y CLICK) ---
+  navItems.forEach(item => {
+    // Cuando el ratón pasa por encima
+    item.addEventListener('mouseenter', function() {
+      moveIndicator(this);
+    });
+
+    // Cuando haces click
+    item.addEventListener('click', function() {
+      // Quitamos la clase 'active' de todos y se la ponemos al que tocaste
+      navItems.forEach(i => i.classList.remove('active', 'indicator-active'));
+      this.classList.add('active', 'indicator-active');
+      
+      moveIndicator(this);
+
+      // Si el menú del móvil estaba abierto, lo cerramos automáticamente
+      if (navMenu && navMenu.classList.contains('active-menu')) {
+        navMenu.classList.remove('active-menu');
+        if (hamburgerBtn) hamburgerBtn.classList.remove('open');
+      }
+    });
+  });
+
+  // Cuando el ratón sale de toda la barra, el cian vuelve a su sitio
+  if (navMenu) {
+    navMenu.addEventListener('mouseleave', () => {
+      const currentActive = document.querySelector('.nav-item.active');
+      moveIndicator(currentActive);
+    });
+  }
+
+  // --- 4. BOTÓN HAMBURGUESA (MÓVILES) ---
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('open');
+      navMenu.classList.toggle('active-menu');
+    });
+  }
+
+  // --- 5. EL ARREGLO AL REDIMENSIONAR LA PANTALLA ---
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    // 1. Apagamos todas las animaciones instantáneamente
+    document.body.classList.add('no-transition');
+
+    // 2. Si pasamos de móvil a PC, cerramos el menú
+    if (window.innerWidth > 900 && navMenu.classList.contains('active-menu')) {
+      navMenu.classList.remove('active-menu');
+      if (hamburgerBtn) hamburgerBtn.classList.remove('open');
+    }
+
+    clearTimeout(resizeTimer);
+    
+    // 3. Volvemos a la normalidad cuando el usuario deja de redimensionar
+    resizeTimer = setTimeout(() => {
+      // Volvemos a encender las animaciones
+      document.body.classList.remove('no-transition');
+      
+      const currentActive = document.querySelector('.nav-item.active');
+      moveIndicator(currentActive, true); 
+    }, 200); // 200ms es suficiente aquí
+  });
+});
