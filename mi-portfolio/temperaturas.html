@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Fernández | Software Engineer</title>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <section class="about-section-proyect">
+    <div class="container">
+      <h1 class="section-title section-title-proyect">
+        Algoritmo de <span class="text-neon">Predicción de Temperaturas</span>
+      </h1>
+      <div class="project-layout">
+
+        <!-- MITAD IZQUIERDA: Carrusel de Bootstrap envuelto en tu diseño premium -->
+        <div class="project-image-wrapper">
+          <div id="carruselProyecto" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicadores (Las rayitas de abajo) -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carruselProyecto" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carruselProyecto" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carruselProyecto" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Las imágenes del carrusel -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/src/assets/aaaaa.png" class="d-block w-100" alt="Arquitectura del algoritmo">
+              </div>
+              <div class="carousel-item">
+                <img src="/src/assets/bbbbb.png" class="d-block w-100" alt="Gráficas de predicción">
+              </div>
+            </div>
+
+            <!-- Botones de Siguiente y Anterior -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselProyecto" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselProyecto" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- MITAD DERECHA: Descripción del Proyecto -->
+        <div class="project-info">
+          <p class="about-bio">
+            Este proyecto es un modelo avanzado de Machine Learning diseñado para analizar y predecir variaciones
+            térmicas con un alto grado de precisión.
+          </p>
+          <p class="about-bio">
+            A través de la integración de la <strong>Ciencia de Datos</strong> y la ingeniería Backend, el algoritmo
+            procesa grandes volúmenes de datos meteorológicos históricos, limpiando y estructurando la información para
+            alimentar redes neuronales. El resultado es un sistema escalable capaz de adelantarse a las anomalías
+            climáticas.
+          </p>
+          <h3 class="card-title">Núcleo técnico del proyecto</h3>
+          <div class="skill-card-project">
+            <div class="skill-tags">
+              <span class="tag">
+                <img src="/src/assets/c.svg" alt="Logo C" class="btn-icon-habilities">
+                C
+              </span>
+            </div>
+          </div>
+
+          <!-- NUEVO: Botones de Acción -->
+          <div class="about-actions">
+            <!-- Botón principal al repo -->
+            <a href="https://github.com/tu-usuario/tu-repo" target="_blank" class="btn-solid">
+              Ver en GitHub
+            </a>
+            <!-- Botón secundario para volver (ajusta la ruta si hace falta) -->
+            <a href="/index.html#proyectos" class="btn-outline">
+              Volver al Portfolio
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <script src="./src/particles.min.js"></script>
+  <script src="/app.js"></script>
+
+
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+
+  <script type="text/javascript" src="/src/vanilla-tilt.js"></script>
+  <script type="text/javascript">
+    VanillaTilt.init(document.querySelector(".tilt"), {
+      max: 13,
+      speed: 4000
+    });
+  </script>
+  <script type="text/javascript">
+    VanillaTilt.init(document.querySelector(".tilt2"), {
+      max: 13,
+      speed: 4000
+    });
+  </script>
+</body>
+
+</html>

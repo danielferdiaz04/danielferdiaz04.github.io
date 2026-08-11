@@ -413,6 +413,10 @@ body {
   margin-bottom: 10px;
 }
 
+.section-title-proyect {
+  padding: 20px;
+}
+
 .section-subtitle {
   color: #a0a0a0;
   margin-bottom: 50px;
@@ -427,7 +431,7 @@ body {
 }
 
 /* 1. La tarjeta original (Vuelve a tener su fondo limpio de cristal) */
-.skill-card {
+.skill-card, .skill-card-project{
   position: relative;
   /* Muy importante para anclar el nuevo borde */
   background-color: rgba(17, 17, 17, 0.6);
@@ -440,8 +444,13 @@ body {
   /* Quitamos el borde tradicional */
 }
 
+.skill-card-project{
+  margin-bottom: 20px;
+}
+
+
 /* 2. EL BORDE MÁGICO: Solo afecta a la línea exterior */
-.skill-card::before {
+.skill-card::before, .skill-card-project::before{
   content: "";
   position: absolute;
   inset: 0;
@@ -755,9 +764,12 @@ body {
 
 /* --- Estilo de los Logos --- */
 .brand-logo {
-  height: 100px;
+  height: 170px;
   width: auto;
-  /* Por defecto los ponemos en gris y un poco transparentes */
+
+
+  padding-bottom: 20px;
+  padding-top: 20px;
 
   transition: all 0.3s ease;
 }
@@ -782,6 +794,10 @@ body {
    ======================== */
 .about-section {
   padding: 100px 5%;
+}
+
+.about-section-proyect {
+  padding: 20px 5%;
 }
 
 .about-layout {
@@ -1016,6 +1032,24 @@ body {
 /* Opcional: Si quieres que los contenedores no desborden la pantalla en móviles durante la animación */
 html, body {
   overflow-x: hidden;
+}
+
+/* ========================
+   CARRUSEL
+   ======================== */
+
+/* Obligamos a los contenedores del carrusel a ocupar el 100% de tu caja */
+.project-image-wrapper .carousel,
+.project-image-wrapper .carousel-inner,
+.project-image-wrapper .carousel-item {
+  height: 100%;
+}
+
+/* Forzamos a que las imágenes del carrusel rellenen el hueco sin deformarse */
+.project-image-wrapper .carousel-item img {
+  height: 100%;
+  object-fit: cover; /* Esta es la magia: recorta los bordes que sobren para llenar la caja */
+  border-radius: 20px; /* Mantiene las esquinas redondeadas de tu diseño */
 }
 
 /* ========================
