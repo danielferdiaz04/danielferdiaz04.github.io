@@ -415,6 +415,12 @@ body {
 
 .section-title-proyect {
   padding: 20px;
+  text-align: center;      
+  
+  /* --- LOS 3 SEGUROS DE VIDA --- */
+  width: 100%;             /* 1. Obliga a que la caja ocupe toda la pantalla */
+  justify-content: center; /* 2. Si el título original usa flexbox, esto lo centra */
+  margin: 0 auto;          /* 3. Centra la caja entera por si tiene un max-width */
 }
 
 .section-subtitle {
@@ -1050,6 +1056,71 @@ html, body {
   height: 100%;
   object-fit: cover; /* Esta es la magia: recorta los bordes que sobren para llenar la caja */
   border-radius: 20px; /* Mantiene las esquinas redondeadas de tu diseño */
+}
+
+/* ========================
+   ESTRUCTURA DE CASO DE ESTUDIO (PROYECTOS)
+   ======================== */
+
+/* Cabecera centrada y descripción limitada para que no sea infinita de leer */
+.project-header-project {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.project-description {
+  max-width: 800px;
+  margin: 0 auto; /* Centra el bloque de texto */
+  text-align: center;
+}
+
+/* Limitamos un poco el ancho del carrusel para que se vea elegante */
+.project-demo-wrapper {
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+}
+
+/* Modificamos tu layout de 2 columnas para alinear los textos arriba */
+.project-details-grid {
+  align-items: start;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+
+/* Lista personalizada (Sustituye los puntos por flechas cian) */
+.project-list-project {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-list-project li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 15px;
+}
+
+.project-list-project li::before {
+  content: '▹'; /* Flecha tipo terminal hacker */
+  color: #00cab9;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Pie del proyecto centrado */
+.project-footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Clase de utilidad para centrar flexbox limpiamente */
+.flex-center {
+  justify-content: center;
+  margin-top: 20px;
 }
 
 /* ========================
