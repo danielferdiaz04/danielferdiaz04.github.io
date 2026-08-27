@@ -46,6 +46,11 @@
   font-size: 1rem;
   transition: color 0.3s ease;
   cursor: pointer;
+
+  /* --- LO NUEVO --- */
+  white-space: nowrap;       /* 1. Prohíbe que el texto salte a la siguiente línea */
+  overflow: hidden;          /* 2. Oculta lo que se salga de la caja */
+  text-overflow: ellipsis;   /* 3. Pone los "..." si el texto es demasiado largo */
 }
 
 .nav-item.indicator-active {
@@ -601,6 +606,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   /* Línea fina de separación */
   transition: all 0.3s ease;
+  gap: 20px;
 }
 
 /* El texto del proyecto */
@@ -1171,5 +1177,28 @@ html, body {
   .project-layout {
     grid-template-columns: 1fr;
     /* Pasa de 2 columnas a 1 sola columna */
+  }
+
+
+  .hero-container {
+    /* 1. Si tu hero-container está hecho con Flexbox: */
+    flex-direction: column; 
+    
+    /* 2. Si tu hero-container está hecho con Grid (por si acaso): */
+    grid-template-columns: 1fr; 
+    
+    /* 3. Un poco de aire para que la terminal no se pegue a los botones */
+    gap: 50px; 
+  }
+
+  .project-item {
+    flex-direction: column;    /* Pasa de estar en fila (row) a estar en columna (apilado) */
+    align-items: flex-start;   /* Alinea el texto y los botones a la izquierda */
+    gap: 15px;                 /* Añade un pequeño hueco entre el título y los botones */
+  }
+
+  .project-actions {
+    width: 100%;
+    justify-content: flex-start; 
   }
 }
