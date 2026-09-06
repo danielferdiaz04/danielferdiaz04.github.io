@@ -1127,7 +1127,7 @@ html, body {
 /* Clase de utilidad para centrar flexbox limpiamente */
 .flex-center {
   justify-content: center;
-  margin-top: 20px;
+  
 }
 
 /* ========================
