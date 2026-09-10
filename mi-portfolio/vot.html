@@ -6,7 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Predicción de Temperaturas | Daniel Fernández</title>
+  <title>Sistema de seguimiento de Objetos | Daniel Fernández</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
       <!-- 1. TÍTULO SOLITARIO (Arriba del todo) -->
       <div class="project-header project-header-project">
         <h1 class="section-title section-title-proyect">
-          Algoritmo de <span class="text-neon">Predicción de Temperaturas</span>
+          Tracker de <span class="text-neon">Seguimiento de Objetos</span>
         </h1>
       </div>
 
@@ -59,10 +59,10 @@
           <!-- Le añadimos la clase mt-0 para que se alinee perfectamente con el techo de la foto -->
           <h3 class="card-title project-subtitle mt-0">Sobre el proyecto</h3>
           <p class="about-bio">
-            Este proyecto es un modelo avanzado de Machine Learning diseñado para analizar y predecir variaciones térmicas con un alto grado de precisión.
+            Este proyecto implementa un <strong>sistema de seguimiento de objetos</strong> capaz de localizar y mantener la posición de un objeto a lo largo de una secuencia de imágenes mediante técnicas clásicas de visión artificial.
           </p>
           <p class="about-bio">
-            A través de la integración de la <strong>Ciencia de Datos</strong> y la ingeniería Backend, procesa grandes volúmenes de datos meteorológicos históricos, limpiando y estructurando la información para alimentar redes neuronales y adelantarse a las anomalías climáticas.
+            El tracker utiliza <strong>template matching</strong> mediante la función <strong>cv2.matchTemplate</strong>, buscando en cada frame la región que presenta una mayor similitud con el objeto observado. La búsqueda se realiza dentro de una región próxima a la posición anterior para mejorar la eficiencia del seguimiento.
           </p>
         </div>
         
@@ -75,9 +75,9 @@
         <div class="project-info">
           <h3 class="card-title project-subtitle mt-0">Características principales</h3>
           <ul class="project-list project-list-project about-bio">
-            <li><strong>Análisis predictivo:</strong> Proyección de anomalías climáticas a corto y medio plazo.</li>
-            <li><strong>Pipeline ETL automatizado:</strong> Limpieza y estructuración de datos crudos en tiempo real.</li>
-            <li><strong>Alta escalabilidad:</strong> Arquitectura backend preparada para procesar millones de registros.</li>
+             <li><strong>Template Matching:</strong> Localización del objeto mediante comparación de regiones de la imagen.</li>
+            <li><strong>Búsqueda local:</strong> Limitación del área de búsqueda alrededor de la posición anterior para mejorar la eficiencia.</li>
+            <li><strong>Evaluación VOT:</strong> Medición del rendimiento mediante las métricas utilizadas en el VOT Challenge 2017.</li>
           </ul>
         </div>
 
@@ -85,7 +85,7 @@
         <div class="project-info">
           <h3 class="card-title project-subtitle mt-0">Mi aportación</h3>
           <p class="about-bio">
-            Lideré la investigación y el desarrollo del modelo desde cero. Diseñé la arquitectura de datos, implementé los scripts de limpieza y entrené la red neuronal optimizando los tiempos de inferencia. Además, desarrollé la lógica de integración para que los resultados puedan consumirse fácilmente.
+            Desarrollé la lógica principal del tracker, implementando el algoritmo de seguimiento dentro de la función <strong>track</strong>. Diseñé el sistema de búsqueda y localización del objeto, gestioné la actualización de su posición entre frames y ajusté los parámetros de búsqueda para mejorar el rendimiento.
           </p>
         </div>
         
@@ -98,30 +98,22 @@
         <div class="skill-card-project">
           <div class="skill-tags flex-center">
             <span class="tag">
-              <img src="/src/assets/c.svg" alt="Logo C" class="btn-icon-habilities">
-              C
+              <img src="/src/assets/python.svg" alt="Logo C" class="btn-icon-habilities">
+              Python
             </span>
             <span class="tag">
-              <img src="/src/assets/c.svg" alt="Logo C" class="btn-icon-habilities">
-              C
+              <img src="/src/assets/vot.svg" alt="Logo VOT" class="btn-icon-habilities">
+              VOT 2017
             </span>
             <span class="tag">
-              <img src="/src/assets/c.svg" alt="Logo C" class="btn-icon-habilities">
-              C
-            </span>
-            <span class="tag">
-              <img src="/src/assets/c.svg" alt="Logo C" class="btn-icon-habilities">
-              C
-            </span>
-            <span class="tag">
-              <img src="/src/assets/c.svg" alt="Logo C" class="btn-icon-habilities">
-              C
+              <img src="/src/assets/opencv.svg" alt="Logo C" class="btn-icon-habilities">
+              OpenCV
             </span>
           </div>
         </div>
 
         <div class="about-actions flex-center">
-          <a href="https://github.com/tu-usuario/tu-repo" target="_blank" class="btn-solid">
+          <a href="https://github.com/danielferdiaz04/VOT-Vision-Challenge" target="_blank" class="btn-solid">
             Ver en GitHub
           </a>
           <a href="/index.html#proyectos" class="btn-outline">
