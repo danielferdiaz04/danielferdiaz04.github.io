@@ -1058,11 +1058,10 @@ html, body {
   height: 100%;
 }
 
-/* Forzamos a que las imágenes del carrusel rellenen el hueco sin deformarse */
 .project-image-wrapper .carousel-item img {
   height: 100%;
-  object-fit: cover; /* Esta es la magia: recorta los bordes que sobren para llenar la caja */
-  border-radius: 20px; /* Mantiene las esquinas redondeadas de tu diseño */
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 /* ========================
