@@ -154,14 +154,27 @@
   </section>
 
   <!-- SCRIPTS -->
-  <script src="./src/particles.min.js"></script>
-  <script src="/app.js"></script>
+  <script src="./particles.min.js"></script>
+  <script src="./app.js"></script>
+  <script src="./vanilla-tilt.js"></script>
+
+
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
-  <script type="text/javascript" src="/src/vanilla-tilt.js"></script>
+
   <script type="text/javascript">
-    VanillaTilt.init(document.querySelector(".tilt"), { max: 13, speed: 4000 });
-    VanillaTilt.init(document.querySelector(".tilt2"), { max: 13, speed: 4000 });
+    if (document.querySelector(".tilt")) {
+      VanillaTilt.init(document.querySelector(".tilt"), {
+        max: 13,
+        speed: 4000
+      });
+    }
+    if (document.querySelector(".tilt2")) {
+      VanillaTilt.init(document.querySelector(".tilt2"), {
+        max: 13,
+        speed: 4000
+      });
+    }
   </script>
 </body>
 
