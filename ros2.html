@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robotic Challenge | Daniel Fernández</title>
+  <script type="module" crossorigin src="./assets/main-Bnxm2vLK.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-Cxy2mKCh.css">
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  
+  <section class="about-section-proyect">
+    <div class="container">
+      
+      <!-- 1. TÍTULO SOLITARIO (Arriba del todo) -->
+      <div class="project-header project-header-project">
+        <h1 class="section-title section-title-proyect">
+          Sistema de Navegación Autónoma para <span class="text-neon">TurtleBot con ROS2</span>
+        </h1>
+      </div>
+
+      <!-- 2. CARRUSEL Y DESCRIPCIÓN (Fila 1: Dos columnas) -->
+      <div class="project-layout project-details-grid">
+        
+        <!-- Columna Izquierda: Carrusel -->
+        <div class="project-image-wrapper">
+          <div id="carruselProyecto" class="carousel slide" data-bs-ride="carousel">
+            
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carruselProyecto" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carruselProyecto" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carruselProyecto" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carruselProyecto" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carruselProyecto" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carruselProyecto" data-bs-slide-to="5" aria-label="Slide 6"></button>
+              <button type="button" data-bs-target="#carruselProyecto" data-bs-slide-to="6" aria-label="Slide 7"></button>
+              <button type="button" data-bs-target="#carruselProyecto" data-bs-slide-to="7" aria-label="Slide 8"></button>
+              <button type="button" data-bs-target="#carruselProyecto" data-bs-slide-to="8" aria-label="Slide 9"></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./ros21.png" class="d-block w-100" alt="Mapa Gazebo">
+              </div>
+              <div class="carousel-item">
+                <img src="./ros22.png" class="d-block w-100" alt="Mapa Gazebo 3D">
+              </div>
+              <div class="carousel-item">
+                <img src="./ros23.png" class="d-block w-100" alt="Turtlebot en acción">
+              </div>
+              <div class="carousel-item">
+                <img src="./ros24.png" class="d-block w-100" alt="Turtlebot en acción">
+              </div>
+              <div class="carousel-item">
+                <img src="./ros25.png" class="d-block w-100" alt="Turtlebot en acción">
+              </div>
+              <div class="carousel-item">
+                <img src="./ros26.png" class="d-block w-100" alt="Turtlebot en acción">
+              </div>
+              <div class="carousel-item">
+                <img src="./ros27.png" class="d-block w-100" alt="Recorrido finalizado">
+              </div>
+              <div class="carousel-item">
+                <img src="./ros28.jpg" class="d-block w-100" alt="Recorrido finalizado">
+              </div>
+              <div class="carousel-item">
+                <img src="./ros29.jpg" class="d-block w-100" alt="Recorrido finalizado">
+              </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselProyecto" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselProyecto" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Descripción -->
+        <div class="project-info">
+          <!-- Le añadimos la clase mt-0 para que se alinee perfectamente con el techo de la foto -->
+          <h3 class="card-title project-subtitle mt-0">Sobre el proyecto</h3>
+          <p class="about-bio">
+            Este proyecto consiste en el desarrollo de un sistema de navegación autónoma para un TurtleBot utilizando ROS2. El sistema integra un planificador global de rutas, un controlador de seguimiento y un mecanismo reactivo de detección y evasión de obstáculos.
+          </p>
+          <p class="about-bio">
+            El planificador implementa el algoritmo de búsqueda óptima A* sobre una matriz de costes generada a partir de un mapa de ocupación bidimensional (nav_msgs/OccupancyGrid). A diferencia de una búsqueda basada únicamente en obstáculos, el algoritmo tiene en cuenta zonas de inflación cercanas a las paredes, permitiendo generar trayectorias que equilibran distancia y seguridad.
+          </p>
+        </div>
+        
+      </div>
+
+      <!-- 3 Y 4. CARACTERÍSTICAS Y APORTACIÓN (Fila 2: Dos columnas) -->
+      <div class="project-layout project-details-grid">
+        
+        <!-- Columna Izquierda -->
+        <div class="project-info">
+          <h3 class="card-title project-subtitle mt-0">Características principales</h3>
+          <ul class="project-list project-list-project about-bio">
+            <li><strong>Planificación global con A*:</strong> Implementación del algoritmo de búsqueda heurística A* utilizando una conectividad de 8 direcciones y distancia euclídea como función heurística.</li>
+            <li><strong>Matriz de costes continua:</strong> Procesamiento de mapas OccupancyGrid de ROS para diferenciar entre espacio libre, obstáculos y zonas de inflación, penalizando las trayectorias cercanas a obstáculos.</li>
+            <li><strong>Seguimiento de trayectoria:</strong> Implementación de una estrategia basada en Pure Pursuit para seleccionar dinámicamente puntos intermedios de la ruta y guiar al robot hacia el objetivo.</li>
+            <li><strong>Detección de obstáculos con LiDAR:</strong> Monitorización del entorno mediante mensajes LaserScan y detección de posibles colisiones en el área frontal del robot.</li>
+            <li><strong>Evasión reactiva:</strong> Implementación de Campos Potenciales Artificiales (APF) que combinan fuerzas de atracción hacia el objetivo y fuerzas de repulsión generadas por obstáculos cercanos.</li>
+
+          </ul>
+        </div>
+
+        <!-- Columna Derecha -->
+        <div class="project-info">
+          <h3 class="card-title project-subtitle mt-0">Mi aportación</h3>
+          <p class="about-bio">
+            Participé en el desarrollo del sistema de navegación autónoma, implementando los principales componentes encargados de la planificación y ejecución de rutas.
+          </p>
+          <p class="about-bio">
+            Desarrollé un planificador A* capaz de trabajar sobre mapas de costes continuos, incluyendo penalizaciones por proximidad a obstáculos. También implementé la transformación entre coordenadas reales y discretas, la validación de estados y la reconstrucción de la trayectoria final.
+          </p>
+          <p class="about-bio">
+            Además, trabajé en el controlador del TurtleBot, integrando el seguimiento de rutas mediante puntos de referencia, la lectura del LiDAR y un sistema reactivo de evasión de obstáculos mediante campos potenciales artificiales.
+          </p>
+        </div>
+        
+      </div>
+
+      <!-- 5. NÚCLEO TÉCNICO Y GITHUB (Centrado abajo) -->
+      <div class="project-footer">
+        <h3 class="card-title project-subtitle">Núcleo técnico del proyecto</h3>
+        
+        <div class="skill-card-project">
+          <div class="skill-tags flex-center">
+            <span class="tag">
+              <img src="./ros2.svg" alt="Logo ROS2" class="btn-icon-habilities">
+              ROS2
+            </span>
+            <span class="tag">
+              <img src="./python.svg" alt="Logo Python" class="btn-icon-habilities">
+              Python
+            </span>
+            <span class="tag">
+              <img src="./a.svg" alt="Logo A*" class="btn-icon-habilities">
+              Algoritmo A*
+            </span>
+            <span class="tag">
+              <img src="./path.svg" alt="Logo Path Planning" class="btn-icon-habilities">
+              Path Planning
+            </span>
+            <span class="tag">
+              <img src="./pure.svg" alt="Logo Pure Pursuit" class="btn-icon-habilities">
+              Pure Pursuit
+            </span>
+            <span class="tag">
+              <img src="./lidar.svg" alt="Logo LiDAR" class="btn-icon-habilities">
+              LiDAR
+            </span>
+            <span class="tag">
+              <img src="./campos_potenciales.svg" alt="Logo APF" class="btn-icon-habilities">
+              Campos Potenciales Artificiales
+            </span>
+            <span class="tag">
+              <img src="./turtlebot.svg" alt="Logo TurtleBot" class="btn-icon-habilities">
+              TurtleBot
+            </span>
+          </div>
+        </div>
+
+        <div class="about-actions flex-center">
+          <a href="https://github.com/Parritoso/RVA" target="_blank" class="btn-solid">
+            Ver en GitHub
+          </a>
+          <a href="/index.html#proyectos" class="btn-outline">
+            Volver al Portfolio
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <script src="./src/particles.min.js"></script>
+  <script src="./app.js"></script>
+  <div id="app"></div>
+  <script type="text/javascript" src="/src/vanilla-tilt.js"></script>
+  <script type="text/javascript">
+    VanillaTilt.init(document.querySelector(".tilt"), { max: 13, speed: 4000 });
+    VanillaTilt.init(document.querySelector(".tilt2"), { max: 13, speed: 4000 });
+  </script>
+</body>
+
+</html>
